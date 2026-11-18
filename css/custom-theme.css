@@ -1,0 +1,58 @@
+:root {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+  --bs-secondary-bg: #242424;
+  --bs-border-color: #333333;
+
+  --bs-primary: #c96f4a;
+  --bs-primary-rgb: 201, 111, 74;
+  --bs-danger: #e5484d;
+  
+  --bs-body-font-family: 'Inter', -apple-system, sans-serif;
+  --bs-border-radius: 12px;
+  --bs-border-radius-lg: 20px;
+
+  --sp-accent: #c96f4a;
+  --sp-surface: #242424;
+  --sp-font-display: 'Playfair Display', Georgia, serif;
+}
+
+.brand-font {
+  font-family: var(--sp-font-display);
+  letter-spacing: .02em;
+}
+
+.brand-tagline {
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.text-accent {
+  color: var(--sp-accent) !important;
+}
+
+.card {
+  --bs-card-border-color: transparent;
+  --bs-card-bg: var(--sp-surface);
+  --bs-card-border-radius: 16px;
+  --bs-card-spacer-y: 1rem;
+  --bs-card-spacer-x: 1.25rem;
+}
+
+.badge {
+  --bs-badge-font-size: .75rem;
+  --bs-badge-padding-x: .65rem;
+  --bs-badge-padding-y: .35rem;
+  --bs-badge-border-radius: 50rem;
+}
+
+.pagination {
+  --bs-pagination-color: var(--bs-body-color);
+  --bs-pagination-bg: var(--sp-surface);
+  --bs-pagination-border-color: var(--bs-border-color);
+  --bs-pagination-active-bg: var(--bs-primary);
+  --bs-pagination-active-border-color: var(--bs-primary);
+  --bs-pagination-hover-bg: #2a2a2a;
+  --bs-pagination-hover-color: #fff;
+}

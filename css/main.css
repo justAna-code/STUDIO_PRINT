@@ -1,0 +1,168 @@
+body {
+  background-image: radial-gradient(circle at top, #1a1a1a 0%, var(--bs-body-bg) 100%);
+  background-attachment: fixed;
+}
+
+/* Слайдер */
+.promo-slide--1 {
+  background: radial-gradient(circle at 30% 50%, #3d2920 0%, #121212 80%);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.promo-slide--1::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(120deg, rgba(201, 111, 74, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.promo-slide--2 {
+  background: radial-gradient(circle at 70% 50%, #2a1b15 0%, #121212 80%);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.promo-slide--2::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(240deg, rgba(201, 111, 74, 0.15) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Общие настройки слайда */
+.promo-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  max-height: 400px;
+  height: 35vh; /* Высота зависит от экрана, но не больше 400px */
+}
+
+/* Фильтры не растягиваются на всю высоту */
+#filters {
+  align-self: flex-start;
+}
+
+/* Карточки */
+.card {
+  transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow .3s ease, background-color .3s ease;
+}
+
+.card:hover {
+  background-color: #2a2a2a;
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(201, 111, 74, 0.15);
+}
+
+.card-img-wrapper {
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img-wrapper img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+  padding: 1rem;
+}
+
+.card:hover .card-img-wrapper img {
+  transform: scale(1.1) rotate(-1deg);
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.7));
+}
+
+.card-title a {
+  font-weight: 600;
+  transition: color .2s ease;
+}
+
+.card:hover .card-title a {
+  color: var(--sp-accent) !important;
+}
+
+/* Кнопки */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #b05a37;
+  --bs-btn-hover-border-color: #b05a37;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-color: #fff;
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 767.98px) {
+  .promo-slide {
+    height: 250px;
+  }
+  .promo-slide h2 {
+    font-size: 1.8rem;
+  }
+  .promo-slide p {
+    font-size: 1rem;
+  }
+  .promo-slide .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  [data-add-to-cart] { width: 100%; }
+  .card-body .btn-outline-primary {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.5rem;
+  }
+  .pagination {
+    --bs-pagination-font-size: .8rem;
+    --bs-pagination-padding-x: .5rem;
+    --bs-pagination-padding-y: .25rem;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--sp-accent);
+  outline-offset: 2px;
+}
+
+.cart-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Кастомизация инпутов */
+.form-range::-webkit-slider-thumb { background: var(--bs-primary); }
+.form-range::-moz-range-thumb { background: var(--bs-primary); }
+.form-range::-webkit-slider-runnable-track { background-color: #333; }
+.form-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #121212, 0 0 0 0.25rem rgba(201, 111, 74, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.form-check-input:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(201, 111, 74, 0.25);
+}
+
+#filters .offcanvas-title { color: #ffffff; }
+.form-check-label { color: #d1d1d1; }
+.form-check-label:hover { color: #ffffff; }
+#filters label[for="priceRange"] { color: #ffffff; opacity: 0.9; }
+
+/* Ограничение ширины контейнера для больших экранов */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px; 
+  }
+}
